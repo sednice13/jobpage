@@ -1,0 +1,16 @@
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .menu li {
+    margin: 0 15px;
+    cursor: pointer;
+  }
+  
+  .menu li:hover {
+    text-decoration: underline;
+  }
