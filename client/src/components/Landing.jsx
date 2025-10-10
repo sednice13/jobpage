@@ -8,7 +8,7 @@ const Landing = () => {
              
               <h2>Samuel Åhlander</h2>
            
-            <h4>Click on my name to get started</h4>
+            
           </div>
     </div>
   );
