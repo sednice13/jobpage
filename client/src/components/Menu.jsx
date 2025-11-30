@@ -1,15 +1,14 @@
 import React from 'react';
-import styles from './design.module.css';
 
 const Menu = () => {
   return (
-    <div>
-      <ul className={styles.menu}>
-        <li>GitHub</li>
-        <li>Om mig</li>
-        <li>Kontakt</li>
+    <nav className="w-full">
+      <ul className="flex justify-center gap-8 text-white py-4 select-none">
+        <li className="hover:underline cursor-pointer">GitHub</li>
+        <li className="hover:underline cursor-pointer">Jobs</li>
+        <li className="hover:underline cursor-pointer">CV</li>
       </ul>
-    </div>
+    </nav>
   );
 };
 
