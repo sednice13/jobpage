@@ -10,17 +10,20 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    defaults:
+       run:
+        working-directory: client
+
     steps:
       - name: Check out code
         uses: actions/checkout@v4
+    
 
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: go to client folder
-        run: cd client
-
+      - 
       - name: Install dependencies
         run: npm ci
 
