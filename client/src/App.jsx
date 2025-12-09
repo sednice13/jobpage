@@ -1,34 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Component } from 'react';
-import Menu from './components/Menu';
-import Landing from './components/Landing';
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import Landing from "./components/Landing";
+import Menu from "./components/Menu";
 
+function Home() {
+  return <main className="p-4"><h1>Hem</h1></main>;
+}
 
 const Layout = () => {
-  const location = useLocation();
-  
+  const { pathname } = useLocation();
   return (
-    <div className='fullsite'>
-    
-      {location.pathname !== '/' && <Menu />}
+    <div className="min-h-screen w-full bg-black">
+      {pathname !== "/" && <Menu />}
       <Routes>
-        <Route path='/' exact element={<Landing/>} />
-        
+        <Route path="/" element={<Landing />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </div>
   );
-}
+};
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <Layout />
-      </Router>
-    );
-  }
+export default function App() {
+  return <Router><Layout /></Router>;
 }
-
-export default App;

@@ -1,8 +1,13 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from './App';
 
-test('renders learn react link', () => {
+test('navigates from Landing to Home on title click', async () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const title = screen.getByRole('heading', { level: 1 });
+  expect(title).toBeInTheDocument();
+
+  await userEvent.click(title);
+
+  expect(screen.getByText('Hem')).toBeInTheDocument();
 });
